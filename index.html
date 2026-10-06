@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fbf8f2">
+  <meta name="description" content="Pesan Stup Roti Lumer dan Roasted Milk Tea MELETUP dengan topping favoritmu.">
+  <title>MELETUP — Stup Roti &amp; Roasted Milk Tea</title>
+  <link rel="icon" type="image/jpeg" href="img/logo-meletup.jpeg">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+  <div class="announcement">
+    <i class="fa-solid fa-sparkles" aria-hidden="true"></i>
+    <span>Temukan menu favoritmu, pesan praktis lewat WhatsApp</span>
+    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+  </div>
+
+  <header class="navbar">
+    <a class="logo" href="#home" aria-label="MELETUP, ke halaman utama">
+      <img id="brand-logo" src="img/logo-meletup.jpeg" alt="MELETUP">
+    </a>
+    <nav class="nav-menu" id="nav-menu" aria-label="Navigasi utama">
+      <a class="nav-link active" href="#home">Home</a>
+      <a class="nav-link" href="#menu">Menu</a>
+      <a class="nav-link" href="#about">Tentang</a>
+      <a class="nav-link" href="#cara-pesan">Cara Pesan</a>
+    </nav>
+    <div class="navbar-actions">
+      <button class="cart-icon" id="cart-btn" type="button" aria-label="Buka keranjang">
+        <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i><span id="cart-count">0</span>
+      </button>
+      <button class="hamburger" id="hamburger" type="button" aria-label="Buka menu"
+        aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-gallery" aria-hidden="true">
+        <div class="hero-track">
+          <img src="img/stup.jpeg" data-fallback="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1400" alt="" fetchpriority="high">
+          <img src="img/rmt.jpeg" data-fallback="https://images.unsplash.com/photo-1541658016709-82535e94bc69?w=1400" alt="">
+          <img src="img/stup.jpeg" data-fallback="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1400" alt="">
+          <img src="img/rmt.jpeg" data-fallback="https://images.unsplash.com/photo-1541658016709-82535e94bc69?w=1400" alt="">
+        </div>
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <span class="hero-tag">STUP ROTI &amp; ROASTED MILK TEA</span>
+        <h1><span>MELETUP!</span><br>Murah, Lezat, Terjangkau, Unik, Pas</h1>
+        <p>Nikmati Stup Roti Lumer dan Roasted Milk Tea dengan berbagai pilihan topping favoritmu.</p>
+        <a class="hero-button" href="#menu">Lihat Menu <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a>
+      </div>
+    </section>
+
+    <section class="benefits" aria-label="Keunggulan MELETUP">
+      <div class="benefit">
+        <span class="benefit-icon"><i class="fa-solid fa-bowl-food" aria-hidden="true"></i></span>
+        <span><strong>Dibuat fresh</strong><small>Untuk setiap pesanan</small></span>
+      </div>
+      <div class="benefit">
+        <span class="benefit-icon"><i class="fa-solid fa-cookie-bite" aria-hidden="true"></i></span>
+        <span><strong>Pilihan topping</strong><small>Sesuaikan dengan seleramu</small></span>
+      </div>
+      <div class="benefit">
+        <span class="benefit-icon"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></span>
+        <span><strong>Pesan praktis</strong><small>Checkout lewat WhatsApp</small></span>
+      </div>
+    </section>
+
+    <section class="menu-section" id="menu">
+      <div class="section-heading">
+        <span class="section-label">MENU KAMI</span>
+        <h2>Pilih Favoritmu</h2>
+        <p>Dibuat berdasarkan pesanan. Pilih menu favoritmu dan tentukan variannya.</p>
+      </div>
+      <div id="preorder-banner" class="preorder-banner checking" role="status" aria-live="polite">
+        <span class="preorder-banner-icon"><i class="fa-solid fa-clock" aria-hidden="true"></i></span>
+        <span><strong id="preorder-title">Memeriksa jadwal preorder</strong><small id="preorder-description">Mohon tunggu sebentar.</small></span>
+        <button id="refresh-preorder" class="refresh-preorder" type="button" aria-label="Perbarui status preorder" title="Perbarui status"><i class="fa-solid fa-rotate" aria-hidden="true"></i></button>
+      </div>
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        <input id="menu-search" type="search" placeholder="Cari menu..." autocomplete="off" aria-label="Cari menu">
+        <button id="clear-search" class="clear-search" type="button" aria-label="Hapus pencarian">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div id="search-result-info" class="search-result-info" aria-live="polite"></div>
+      <div id="product-grid" class="product-grid"></div>
+      <div id="no-result" class="no-result">
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        <h3>Menu tidak ditemukan</h3>
+        <p>Coba gunakan kata kunci lain.</p>
+      </div>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="about-container">
+        <div class="about-text">
+          <span class="section-label">TENTANG MELETUP</span>
+          <h2>Manisnya Bikin Balik Lagi.</h2>
+          <p>MELETUP hadir dengan pilihan Stup Roti Lumer dan Roasted Milk Tea yang bisa kamu sesuaikan dengan topping favoritmu.</p>
+        </div>
+        <article class="about-card">
+          <span class="benefit-icon"><i class="fa-solid fa-heart" aria-hidden="true"></i></span>
+          <h3>Dibuat dengan Rasa</h3>
+          <p>Menu sederhana untuk menemani waktu santaimu.</p>
+        </article>
+        <article class="about-card">
+          <span class="benefit-icon"><i class="fa-solid fa-cookie-bite" aria-hidden="true"></i></span>
+          <h3>Pilih Topping</h3>
+          <p>Pilih topping sesuai selera sebelum memesan.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="how-section" id="cara-pesan">
+      <div class="section-heading">
+        <span class="section-label">CARA PESAN</span>
+        <h2>Pesan Semudah Itu</h2>
+        <p>Pesanan dicatat ke spreadsheet, lalu kamu bisa mengirim detailnya melalui WhatsApp.</p>
+      </div>
+      <div class="steps">
+        <article class="step-card"><span>01</span><i class="fa-solid fa-utensils" aria-hidden="true"></i><h3>Pilih Menu</h3><p>Pilih Stup Roti atau Roasted Milk Tea favoritmu.</p></article>
+        <article class="step-card"><span>02</span><i class="fa-solid fa-cookie-bite" aria-hidden="true"></i><h3>Pilih Varian</h3><p>Pilih original atau topping dan tentukan jumlahnya.</p></article>
+        <article class="step-card"><span>03</span><i class="fa-solid fa-bag-shopping" aria-hidden="true"></i><h3>Cek Keranjang</h3><p>Periksa jumlah dan total pesananmu.</p></article>
+        <article class="step-card"><span>04</span><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><h3>Pesan via WhatsApp</h3><p>Tekan tombol pesan untuk membuka chat admin.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="topping-modal" role="dialog" aria-modal="true" aria-labelledby="topping-modal-title">
+    <div class="modal-content topping-content">
+      <button class="close-btn" id="close-topping" type="button" aria-label="Tutup">&times;</button>
+      <div class="modal-header">
+        <span class="section-label">KUSTOMISASI</span>
+        <h2 id="topping-modal-title">Pilih Menu</h2>
+        <p id="topping-base-price"></p>
+      </div>
+      <div id="topping-options" class="topping-options"></div>
+      <div class="modal-total">
+        <div><span>Subtotal pilihan</span><strong id="topping-subtotal">Rp 0</strong></div>
+        <button class="primary-button" id="confirm-topping" type="button">Tambah <i class="fa-solid fa-plus" aria-hidden="true"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="cart-modal" role="dialog" aria-modal="true" aria-labelledby="cart-title">
+    <div class="modal-content">
+      <button class="close-btn" id="close-cart" type="button" aria-label="Tutup">&times;</button>
+      <div class="modal-header">
+        <span class="section-label">PESANAN</span>
+        <h2 id="cart-title">Keranjang Belanja</h2>
+      </div>
+      <div id="cart-items" class="cart-items"></div>
+      <div class="modal-total">
+        <div><span>Total</span><strong id="total-price">Rp 0</strong></div>
+        <button class="primary-button" id="checkout-btn" type="button">Lanjut Pesan <i class="fa-brands fa-whatsapp" aria-hidden="true"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkout-title">
+    <div class="modal-content checkout-content">
+      <button class="close-btn" id="close-checkout" type="button" aria-label="Tutup">&times;</button>
+      <div class="modal-header">
+        <span class="section-label">CHECKOUT</span>
+        <h2 id="checkout-title">Form Pemesanan</h2>
+        <p>Pesanan masuk ke pembukuan saat kamu menekan tombol di bawah.</p>
+      </div>
+      <form id="checkout-form">
+        <label class="form-label" for="cust-name">Nama Pemesan</label>
+        <input class="form-input" id="cust-name" type="text" required maxlength="100" placeholder="Masukkan nama kamu" autocomplete="name">
+        <label class="form-label" for="cust-payment">Metode Pembayaran</label>
+        <select class="form-input" id="cust-payment" required>
+          <option value="" disabled selected>Pilih metode pembayaran</option>
+          <option value="Cash">Cash</option>
+          <option value="Qris">Qris</option>
+        </select>
+        <div class="checkout-summary-box">
+          <strong><i class="fa-solid fa-receipt" aria-hidden="true"></i> Ringkasan Pesanan</strong>
+          <div id="checkout-summary"></div>
+          <div class="checkout-total-row"><span>Total Bayar</span><strong id="checkout-total-price">Rp 0</strong></div>
+        </div>
+        <button class="primary-button full-button" type="submit">Pesan ke WhatsApp <i class="fa-brands fa-whatsapp" aria-hidden="true"></i></button>
+      </form>
+    </div>
+  </div>
+
+  <div id="notification" class="notification" aria-live="polite"></div>
+
+  <footer class="footer">
+    <div class="footer-logo">MELETUP</div>
+    <p>Stup Roti &amp; Roasted Milk Tea</p>
+    <span>© 2026 MELETUP. All rights reserved.</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
